@@ -10,6 +10,7 @@ using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using FargowiltasSouls.Content.UI.Elements;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using FargowiltasSouls.Core.Toggler;
+using Luminance.Common.Utilities;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.Collections.Generic;
@@ -22,6 +23,7 @@ namespace FargoClickers.Content.Items.Accessories.Enchantments
 {
     public class MiceEnchantment : BaseEnchant
     {
+        public override string Texture => this.GetPath();
         public override Color nameColor => new Color(177, 179, 224);
         public static Texture2D buffTexture;
         public override List<AccessoryEffect> ActiveSkillTooltips => [AccessoryEffectLoader.GetEffect<MiceKeyEffect>()];

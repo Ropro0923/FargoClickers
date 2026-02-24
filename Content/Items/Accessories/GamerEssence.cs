@@ -1,13 +1,13 @@
 ﻿using ClickerClass;
 using ClickerClass.Items.Accessories;
 using ClickerClass.Items.Weapons.Clickers;
-using FargowiltasSouls.Content.Items.Accessories.Essences;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
 
 namespace FargoClickers.Content.Items.Accessories
 {
+    /*
     public class GamerEssence : BaseEssence
     {
         public override void SetStaticDefaults()
@@ -43,4 +43,5 @@ namespace FargoClickers.Content.Items.Accessories
                 .Register();
         }
     }
+    */
 }

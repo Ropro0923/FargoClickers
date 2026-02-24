@@ -42,7 +42,7 @@ namespace FargoClickers
             {
                 mainRule.Add(ModContent.ItemType<BaronClicker>(), 4);
             }
-            if (npc.type == ModContent.NPCType<LifeChallenger>())
+            if (npc.type == ModContent.NPCType<Lifelight>())
             {
                 mainRule.Add(ModContent.ItemType<LightClicker>(), 4);
             }

@@ -6,6 +6,7 @@ using FargowiltasSouls.Content.Items.Materials;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using FargowiltasSouls.Core.Toggler;
 using FargowiltasSouls.Core.Toggler.Content;
+using Luminance.Common.Utilities;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Localization;
@@ -15,6 +16,7 @@ namespace FargoClickers.Content.Items.Accessories
 {
     public class MasterPlayerSoul : BaseSoul
     {
+        public override string Texture => this.GetPath();
         public static readonly Color ItemColor = new(83, 162, 255);
         protected override Color? nameColor => ItemColor;
         public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs((ModLoader.TryGetMod("CalamityClickers", out var calClicker) && ModLoader.HasMod("FargowiltasCrossmod")) ? ILocalizedModTypeExtensions.GetLocalizedValue(this, "CalamityAccessories") : ILocalizedModTypeExtensions.GetLocalizedValue(this, "NormalAccessories"));
@@ -101,7 +103,7 @@ namespace FargoClickers.Content.Items.Accessories
             {
                 Mod calClicker = ModLoader.GetMod("CalamityClickers");
                 CreateRecipe()
-                    .AddIngredient<GamerEssence>()
+                //    .AddIngredient<GamerEssence>()
                     .AddIngredient(calClicker.Find<ModItem>("DOG").Type)
                     .AddIngredient(calClicker.Find<ModItem>("BloodyChocCookies").Type)
                     .AddIngredient(calClicker.Find<ModItem>("CosmicClickingGlove").Type)
@@ -121,7 +123,7 @@ namespace FargoClickers.Content.Items.Accessories
             }
             else
                 CreateRecipe()
-                    .AddIngredient<GamerEssence>()
+                //    .AddIngredient<GamerEssence>()
                     .AddIngredient<GamerCrate>()
                     .AddIngredient<AimbotModule>()
                     .AddIngredient<ChocolateMilkCookies>()

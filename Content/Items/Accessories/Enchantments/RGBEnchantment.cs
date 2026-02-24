@@ -9,6 +9,7 @@ using FargowiltasSouls;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using FargowiltasSouls.Core.Toggler;
+using Luminance.Common.Utilities;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
@@ -19,6 +20,7 @@ namespace FargoClickers.Content.Items.Accessories.Enchantments
 {
     public class RGBEnchantment : BaseEnchant
     {
+        public override string Texture => this.GetPath();
         public override Color nameColor => new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB);
         public override void SetStaticDefaults()
         {

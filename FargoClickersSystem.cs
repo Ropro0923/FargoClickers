@@ -5,9 +5,10 @@ using ClickerClass.Items.Weapons.Clickers;
 using FargoClickers.Content.Items.Accessories;
 using Fargowiltas.Common.Systems.Recipes;
 using Fargowiltas.Utilities;
-using FargowiltasSouls.Content.Items.Accessories.Masomode;
+using FargowiltasSouls.Content.Items.Accessories.Eternity;
 using FargowiltasSouls.Content.Items.Accessories.Souls;
 using FargowiltasSouls.Content.Items.Armor;
+using FargowiltasSouls.Content.Items.Armor.Eridanus;
 using FargowiltasSouls.Content.Items.Materials;
 using System;
 using System.Reflection;
@@ -36,22 +37,22 @@ namespace FargoClickers
                 {
                     recipe.AddIngredient<MiceFragment>(5);
                 }
-                if (recipe.HasResult<ChaliceoftheMoon>())
+                if (recipe.HasResult<ChaliceofTheMoon>())
                 {
                     recipe.RemoveIngredient(ModContent.ItemType<DeviatingEnergy>());
                     recipe.AddIngredient<MiceFragment>();
                     recipe.AddIngredient(ModContent.ItemType<DeviatingEnergy>(), 10);
                 }
 
-                if (!FargoClickersSystem.RemoveClickerAccesoriesFromFargoSoulsForCSE)
+                if (!RemoveClickerAccesoriesFromFargoSoulsForCSE)
                 {
-                    if (recipe.HasResult<UniverseSoul>())
+                    if (recipe.HasResult<UniverseSoul>() && !recipe.HasIngredient<MasterPlayerSoul>())
                     {
-                        recipe.requiredItem.Insert(4, new Item(ModContent.ItemType<MasterPlayerSoul>()));
+                        recipe.AddIngredient<MasterPlayerSoul>();
                     }
-                    if (recipe.HasResult<TerrariaSoul>())
+                    if (recipe.HasResult<TerrariaSoul>() && !recipe.HasIngredient<ForceOfMatrix>())
                     {
-                        recipe.requiredItem.Insert(9, new Item(ModContent.ItemType<ForceOfMatrix>()));
+                        recipe.AddIngredient<ForceOfMatrix>();
                     }
                 }
             }
@@ -270,7 +271,7 @@ namespace FargoClickers
                 .AddTile(TileID.WorkBenches)
                 .DisableDecraft()
                 .Register();
-            CreateCrateRecipe(ModContent.ItemType<EnchantedLED>(), );
+        //    CreateCrateRecipe(ModContent.ItemType<EnchantedLED>(), );
             Recipe.Create(ModContent.ItemType<EnchantedLED>())
                 .AddIngredient(ItemID.GoldenCrateHard, 2)
                 .AddTile(TileID.WorkBenches)

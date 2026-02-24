@@ -1,12 +1,13 @@
 ﻿using ClickerClass.DrawLayers;
 using ClickerClass.Projectiles;
 using FargoClickers.Content.Items.Accessories.Enchantments;
-using Fargowiltas.Items.Tiles;
+using Fargowiltas.Content.Items.Tiles;
 using FargowiltasSouls;
 using FargowiltasSouls.Content.Items.Accessories.Forces;
 using FargowiltasSouls.Content.UI.Elements;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using FargowiltasSouls.Core.Toggler;
+using Luminance.Common.Utilities;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
@@ -22,7 +23,8 @@ namespace FargoClickers.Content.Items.Accessories
         {
             return false;
         }*/
-        public static Asset<Texture2D> glowmask;
+        public override string Texture => this.GetPath();
+            public static Asset<Texture2D> glowmask;
         public static Texture2D forceTexture;
         public override List<AccessoryEffect> ActiveSkillTooltips => [AccessoryEffectLoader.GetEffect<MiceKeyEffect>()];
         public override void SetStaticDefaults()

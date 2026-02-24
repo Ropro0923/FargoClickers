@@ -52,10 +52,10 @@ namespace FargoClickers
             {
                 if (item.type == ModContent.ItemType<UniverseSoul>() && !item.social)
                 {
-                    tooltips.Insert(8, new TooltipLine(Mod, "ClickStatUniverseSoul", Language.GetTextValue("Mods.FargoClickers.ExpandedTooltips.ClickerRadius") + "\n"
-                                                                                   + Language.GetTextValue("Mods.FargoClickers.ExpandedTooltips.ClickerEffect")));
-                    tooltips.Insert(15, new TooltipLine(Mod, "ClickAccUniverseSoul", (ModLoader.HasMod("CalamityClickers") && ModLoader.HasMod("FargowiltasCrossmod")) ? Language.GetTextValue("Mods.FargoClickers.Items.MasterPlayerSoul.CalamityAccessories") : Language.GetTextValue("Mods.FargoClickers.Items.MasterPlayerSoul.NormalAccessories")));
+                    int Conjurist = tooltips.FindIndex(t => t.Text.Contains("[i:FargowiltasSouls/ConjuristsSoul]"));
+                    tooltips[Conjurist].Text = tooltips[Conjurist].Text.Replace("[i:FargowiltasSouls/ConjuristsSoul]", "[i:FargowiltasSouls/ConjuristsSoul]" + "[i:FargoClickers/MasterPlayerSoul]");
                 }
+                
                 if (item.type == ModContent.ItemType<TerrariaSoul>())
                 {
                     tooltips.Insert(23, new TooltipLine(Mod, "ClickStatUniverseSoul", Language.GetTextValue("Mods.FargoClickers.ExpandedTooltips.MatrixForce")));

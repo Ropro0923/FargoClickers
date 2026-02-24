@@ -9,6 +9,7 @@ using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using FargowiltasSouls.Content.UI.Elements;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using FargowiltasSouls.Core.Toggler;
+using Luminance.Common.Utilities;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
@@ -19,6 +20,7 @@ namespace FargoClickers.Content.Items.Accessories.Enchantments
 {
     public class OverclockEnchantment : BaseEnchant
     {
+        public override string Texture => this.GetPath();
         public override Color nameColor => new Color(214, 84, 91);
         public static Texture2D buffTexture;
         public override void SetStaticDefaults()

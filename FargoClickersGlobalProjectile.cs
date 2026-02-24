@@ -1,5 +1,6 @@
 ﻿using FargoClickers.Content.Items;
 using FargowiltasSouls.Content.Bosses.Champions.Cosmos;
+using FargowiltasSouls.Content.Projectiles.Accessories.Souls;
 using Terraria;
 using Terraria.ModLoader;
 

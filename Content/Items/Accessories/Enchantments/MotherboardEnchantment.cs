@@ -7,6 +7,7 @@ using FargowiltasSouls;
 using FargowiltasSouls.Content.Items.Accessories.Enchantments;
 using FargowiltasSouls.Core.AccessoryEffectSystem;
 using FargowiltasSouls.Core.Toggler;
+using Luminance.Common.Utilities;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
@@ -16,6 +17,7 @@ namespace FargoClickers.Content.Items.Accessories.Enchantments
 {
     public class MotherboardEnchantment : BaseEnchant
     {
+        public override string Texture => this.GetPath();
         public override Color nameColor => new Color(148, 183, 224);
         public override void SetStaticDefaults()
         {
