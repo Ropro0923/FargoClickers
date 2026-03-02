@@ -22,6 +22,8 @@ namespace FargoClickers
 
             extraAPI.Call("NerfTheClicker");
             extraAPI.Call("AddTheClickerRecipeIngredient", ModContent.ItemType<EternalEnergy>(), 20);
+
+            Fargowiltas.Fargowiltas.SoulsMods.Add(mod.Name);
         }
         public override void Unload()
         {
