@@ -14,6 +14,7 @@ using ReLogic.Content;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.ModLoader;
+using Fargowiltas.Common.Systems.Collections;
 
 namespace FargoClickers.Content.Items.Accessories
 {
@@ -49,6 +50,7 @@ namespace FargoClickers.Content.Items.Accessories
                     Color = (drawInfo) => new Color(Main.DiscoR, Main.DiscoG, Main.DiscoB, 50) * 0.7f
                 });
             }
+            FargoItemSets.DuplicatableItems[ModContent.ItemType<ForceOfMatrix>()] = DupeType.Dupable;
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {

@@ -11,6 +11,7 @@ using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using Fargowiltas.Common.Systems.Collections;
 
 namespace FargoClickers.Content.Items.Accessories
 {
@@ -18,13 +19,14 @@ namespace FargoClickers.Content.Items.Accessories
     {
         public override string Texture => this.GetPath();
         public static readonly Color ItemColor = new(83, 162, 255);
-        protected override Color? nameColor => ItemColor;
+    //    protected override Color? nameColor => ItemColor;
         public override LocalizedText Tooltip => base.Tooltip.WithFormatArgs((ModLoader.TryGetMod("CalamityClickers", out var calClicker) && ModLoader.HasMod("FargowiltasCrossmod")) ? ILocalizedModTypeExtensions.GetLocalizedValue(this, "CalamityAccessories") : ILocalizedModTypeExtensions.GetLocalizedValue(this, "NormalAccessories"));
         public override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
 
             ClickerSystem.RegisterClickerItem(this);
+            FargoItemSets.DuplicatableItems[ModContent.ItemType<MasterPlayerSoul>()] = DupeType.Dupable;
         }
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
